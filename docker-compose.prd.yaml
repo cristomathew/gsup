@@ -38,18 +38,18 @@ services:
     depends_on:
       - django
     volumes:
-      - ./certs:/etc/nginx/certs
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
+      # - ./certs:/etc/nginx/certs
+      # - ./data/certbot/conf:/etc/letsencrypt
+      # - ./data/certbot/www:/var/www/certbot
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
     container_name: nginx
-  certbot:
-    image: certbot/certbot:latest
-    volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
-    container_name: certbot
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   volumes:
+  #     - ./certbot/www/:/var/www/certbot/:rw
+  #     - ./certbot/conf/:/etc/letsencrypt/:rw
+  #   container_name: certbot
     
     
 
