@@ -43,6 +43,7 @@ services:
       # - ./data/certbot/www:/var/www/certbot
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
+      - letsencrypt:/etc/letsencrypt
     container_name: nginx
   # certbot:
   #   image: certbot/certbot:latest
@@ -57,6 +58,7 @@ volumes:
   dbdata:
   static_volume:
   media_volume:
+  letsencrypt:
 
 networks:
   gaming-network:
