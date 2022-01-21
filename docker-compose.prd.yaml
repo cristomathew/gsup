@@ -38,8 +38,8 @@ services:
       - 80:80
       - 443:443
     network_mode: host
-    networks:
-      - gaming-network
+    # networks:
+    #   - gaming-network
     depends_on:
       - django
     volumes:
