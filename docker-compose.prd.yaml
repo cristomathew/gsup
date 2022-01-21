@@ -37,7 +37,9 @@ services:
     ports:
       - 80:80
       - 443:443
-    network: host
+    network_mode: host
+    networks:
+      - gaming-network
     depends_on:
       - django
     volumes:
