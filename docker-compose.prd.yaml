@@ -37,21 +37,19 @@ services:
       - gaming-network
     depends_on:
       - django
-    environment:
-      - CERTBOT_EMAIL="cristomathew7@gmail.com"
     volumes:
+      - ./certs:/etc/nginx/certs
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
-      - .certbot:/www:/etc/letsencrypt
-    # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     container_name: nginx
-  # certbot:
-  #   image: certbot/certbot:latest
-  #   volumes:
-  #     - ./certbot/www/:/var/www/certbot/:rw
-  #     - ./certbot/conf/:/etc/letsencrypt/:rw
-  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-  #   container_name: certbot
+  certbot:
+    image: certbot/cerbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+    container_name: certbot
     
     
 
@@ -59,7 +57,6 @@ volumes:
   dbdata:
   static_volume:
   media_volume:
-  certbot:
 
 networks:
   gaming-network:
