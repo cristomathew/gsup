@@ -33,6 +33,8 @@ services:
     build: ./nginx
     ports:
       - 1337:80
+    networks:
+      - gaming-network
     depends_on:
       - django
     volumes:
