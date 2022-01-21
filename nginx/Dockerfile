@@ -1,4 +1,4 @@
-FROM nginx:1.21-alpine
+FROM nginx:stable
 ARG CERTBOT_EMAIL=cristomathew7@gmail.com
 ARG DOMAIN_LIST=cidesports.com
 
