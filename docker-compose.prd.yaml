@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile.prd
     command: gunicorn gaming.wsgi --bind 0.0.0.0:8000
     volumes:
-      - .:/gaming
+      - .:/home/app/gaming/
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
     expose:
