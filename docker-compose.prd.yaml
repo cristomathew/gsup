@@ -1,0 +1,50 @@
+# Author Cristo
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    env_file:
+      - ./env/postgres.env
+    networks:
+      - gaming-network
+    container_name: database
+  django:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prd
+    command: gunicorn gaming:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/gaming
+      - static_volume:/home/app/gaming/staticfiles
+      - media_volume:/home/app/gaming/mediafiles
+    expose:
+      - 8000
+    env_file:
+      - ./env/django.env
+    networks:
+      - gaming-network
+    container_name: django
+    depends_on:
+      - db
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - django
+    volumes:
+      - static_volume:/home/app/gaming/staticfiles
+      - media_volume:/home/app/gaming/mediafiles
+    
+    
+
+volumes:
+  dbdata:
+  static_volume:
+  media_volume:
+
+networks:
+  gaming-network:
