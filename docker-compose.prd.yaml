@@ -22,8 +22,8 @@ services:
       - .:/home/app/gaming/
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
-    expose:
-      - 8000
+    ports:
+      - 8000:8000
     env_file:
       - ./env/django.env
     networks:
@@ -37,8 +37,7 @@ services:
     ports:
       - 80:80
       - 443:443
-    networks:
-      - gaming-network
+    network: host
     depends_on:
       - django
     volumes:
