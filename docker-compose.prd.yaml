@@ -37,18 +37,15 @@ services:
     ports:
       - 80:80
       - 443:443
-    network_mode: host
-    # networks:
-    #   - gaming-network
+    networks:
+      - gaming-network
     depends_on:
       - django
     volumes:
-      # - ./certs:/etc/nginx/certs
-      # - ./data/certbot/conf:/etc/letsencrypt
-      # - ./data/certbot/www:/var/www/certbot
+      - ./certs:/etc/nginx/certs
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
-      - letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt/live/cidesports.com/:/etc/letsencrypt/live/cidesports.com/
     container_name: nginx
   # certbot:
   #   image: certbot/certbot:latest
