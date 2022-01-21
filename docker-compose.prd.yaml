@@ -15,7 +15,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.prd
-    command: gunicorn gaming:application --bind 0.0.0.0:8000
+    command: gunicorn gaming.wsgi --bind 0.0.0.0:8000
     volumes:
       - .:/gaming
       - static_volume:/home/app/gaming/staticfiles
