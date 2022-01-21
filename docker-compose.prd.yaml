@@ -45,7 +45,7 @@ services:
       - ./certs:/etc/nginx/certs
       - static_volume:/home/app/gaming/staticfiles
       - media_volume:/home/app/gaming/mediafiles
-      # - /etc/letsencrypt/live/cidesports.com/:/etc/letsencrypt/live/cidesports.com/
+      - /etc/letsencrypt/live/cidesports.com/:/etc/letsencrypt/live/cidesports.com/
     container_name: nginx
   # certbot:
   #   image: certbot/certbot:latest
