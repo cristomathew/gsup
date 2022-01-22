@@ -77,6 +77,9 @@ body{
   text-align: center;
   
 }
+.carouselPadding{
+  margin-top: 4.5rem;
+}
 .carousel-item {
   height: 25rem;
   overflow: hidden;
