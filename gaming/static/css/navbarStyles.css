@@ -71,17 +71,22 @@ body{
   margin:0;
 }
 
+
+.carouselPadding{
+margin:2rem ;
+margin-bottom: 0;;
+padding-left: 0;
+padding-right: 0;
+}
+
 .carousel-align{
   width:70%;
   height:50%;
   text-align: center;
   
 }
-.carouselPadding{
-  margin-top: 4.5rem;
-}
 .carousel-item {
-  height: 25rem;
+  height: 29rem;
   overflow: hidden;
   width: 100%;
   
@@ -104,6 +109,18 @@ body{
   .rankboard {
       padding:0.75rem;
   }
+  body{
+    padding:0;
+  }
+  .image-control{
+    width:30%;
+    text-align: center;
+    margin-left: 40%;
+}
+card-custom{
+  margin: 0.25rem auto;
+  margin-top: 0.25rem;
+}
   
 }
 
@@ -160,19 +177,20 @@ body{
 
 .games-header{
   font-size:1.5rem;
-  color:#ff0000;
+  color:#fff;
   text-align: center;
   background-color:#303030;
   margin:1rem 0;
   margin-top:0;
-  animation:colorchange 4s infinite both;
+  /* animation:colorchange 4s infinite both; */
 }
 .card-custom{
-  margin:0 auto;
+  margin:auto auto;
+  /* padding:0; */
+  margin-top:2%;
+
 }
-.game-poster{
-  margin:0 a
-}
+
 
 
 /* footer styles */
