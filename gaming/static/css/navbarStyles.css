@@ -89,10 +89,7 @@ body{
   width:14%;
   text-align: center;
   margin-left: 43%;
-<<<<<<< HEAD
   height: auto;
-=======
->>>>>>> ced284c5ad00c4b7c66589d580c22a644fc48185
 }
 
 .gaming-carousel-position{
@@ -136,24 +133,7 @@ padding-right: 0;
   margin: 0;
   scrollbar-color: grey #181818;
 }
-@media (max-width:991px) {
-  .rankboard {
-      padding:0.75rem;
-  }
-  body{
-    padding:0;
-  }
-  .image-control{
-    width:30%;
-    text-align: center;
-    margin-left: 40%;
-}
-card-custom{
-  margin: 0.25rem auto;
-  margin-top: 0.25rem;
-}
-  
-}
+
 
 .rankboard a{
   text-decoration: none;
@@ -224,6 +204,7 @@ card-custom{
   gap: 10px 20px;
 
 }
+
 .card {
   background-color: transparent;
 }
@@ -450,3 +431,30 @@ small {
   color: lightgray;
 }
 
+@media screen and (max-width:991px) {
+  .rankboard {
+      padding:0.75rem;
+  }
+  body{
+    padding:0;
+  }
+  .image-control{
+    width:30%;
+    text-align: center;
+    margin-left: 40%;
+}
+.card-custom{
+  margin: 0.25rem auto;
+  margin-top: 0.25rem;
+  flex-direction: column;
+  gap: 0;
+  border: none;
+}
+.btn{
+  width: 100%;
+}
+.video-container .caption{
+  margin-top: 0;
+}
+  
+}
