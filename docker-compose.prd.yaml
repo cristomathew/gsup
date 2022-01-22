@@ -1,4 +1,5 @@
 # Author Cristo
+#this file is prod only
 version: "3.9"
 
 services:
