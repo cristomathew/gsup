@@ -37,13 +37,39 @@ body{
 /* .outer{
   padding:0 1rem;
 } */
+.video-container {
+  height: 600px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
 
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  margin-top: 70px;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(139,139,139,0.8547794117647058) 19%, rgba(255,255,255,1) 100%);
+}
 
 .navi-settings{
   padding-bottom: 0;
  background-color:#24262c;
 }
-
+.navbar{
+  width: 100vw;
+}
 .partnership{
   background: color #24262c;
 }
@@ -61,7 +87,8 @@ body{
 .image-control{
   width:14%;
   text-align: center;
-  margin-left: 40%;
+  margin-left: 43%;
+  height: auto;
 }
 
 .gaming-carousel-position{
@@ -105,24 +132,7 @@ padding-right: 0;
   margin: 0;
   scrollbar-color: grey #181818;
 }
-@media (max-width:991px) {
-  .rankboard {
-      padding:0.75rem;
-  }
-  body{
-    padding:0;
-  }
-  .image-control{
-    width:30%;
-    text-align: center;
-    margin-left: 40%;
-}
-card-custom{
-  margin: 0.25rem auto;
-  margin-top: 0.25rem;
-}
-  
-}
+
 
 .rankboard a{
   text-decoration: none;
@@ -185,19 +195,21 @@ card-custom{
   /* animation:colorchange 4s infinite both; */
 }
 .card-custom{
-  margin:auto auto;
+  margin-left: 10%;
   /* padding:0; */
   margin-top:2%;
-  opacity: 0;
-  opacity: 0;
-  background-color: red;
+  display: flex;
+  flex-direction: row;
+  gap: 10px 20px;
 
 }
+
 .card {
-  opacity: 0;
-  background-color: red;
+  background-color: transparent;
 }
-
+.card-body {
+  width: 100%;
+}
 
 
 /* footer styles */
@@ -213,10 +225,11 @@ font-family: "Poppins", sans-serif;
 
 .footer-body {
 display: flex;
-background: #333;
+/* background: #333; */
 justify-content: flex-end;
 align-items: flex-end;
-min-height: 60vh;
+min-height: 40vh;
+min-width: 100vw;
 }
 
 .footer {
@@ -341,4 +354,105 @@ margin-left: 38%;
 
 .primary-items{
 padding:0 1.5rem;
+}
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+small {
+  color: lightgray;
+}
+
+@media screen and (max-width:991px) {
+  .rankboard {
+      padding:0.75rem;
+  }
+  body{
+    padding:0;
+  }
+  .image-control{
+    width:30%;
+    text-align: center;
+    margin-left: 40%;
+}
+.card-custom{
+  margin: 0.25rem auto;
+  margin-top: 0.25rem;
+  flex-direction: column;
+  gap: 0;
+  border: none;
+}
+.btn{
+  width: 100%;
+}
+.video-container .caption{
+  margin-top: 0;
+}
+  
 }

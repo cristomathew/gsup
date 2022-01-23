@@ -58,10 +58,9 @@ body{
   z-index: 1;
   position: relative;
   text-align: center;
-  color: #dc0000;
   padding: 30px;
   margin-top: 70px;
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(139,139,139,0.8547794117647058) 19%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8029586834733894) 50%, rgba(255,255,255,0) 100%);
 }
 
 .navi-settings{
@@ -209,10 +208,26 @@ padding-right: 0;
   background-color: transparent;
 }
 .card-body {
-  width: 100%;
-  padding: 0;
+  width: 600px;
 }
-
+.card-body > h3{
+  width: 500px;
+  color: red;
+}
+.card-text {
+  width: 500px;
+  color: yellow;
+}
+.card-body > .buttons{
+  display: inline-flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+.card-body > .buttons > .gap-2{
+  flex-wrap: wrap;
+  padding: 10px;
+}
 
 /* footer styles */
 
@@ -453,8 +468,39 @@ small {
 .btn{
   width: 100%;
 }
+.video-container {
+  height: 800px;
+}
 .video-container .caption{
   margin-top: 0;
+  text-align: left;
 }
+.card-body {
+  width: 300px;
+}
+.card-body > h3{
+  width: 300px;
+  color: red;
+}
+.card-text {
+  width: 300px;
+  color: yellow;
+  line-height: normal;
+  margin-right: 70px;
+}
+.card-text-content{
+  line-height: 80%;
+}
+.card-body > .buttons{
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+.card-body > .buttons > .gap-2{
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
   
 }
