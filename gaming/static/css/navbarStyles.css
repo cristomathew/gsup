@@ -476,7 +476,7 @@ small {
 
 .card-custom > img {
   width: auto;
-  height: 80%;
+  /* height: 80%; */
 }
 
 .btn{
@@ -484,7 +484,7 @@ small {
 }
 
 .video-container {
-  height: 800px;
+  height: 900px;
 }
 
 .video-container .caption{
